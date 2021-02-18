@@ -1,0 +1,82 @@
+.main-grid {
+    display: grid;
+    grid-template-areas: 
+    '. header settings'
+    '. current refresh'
+    '. readings .'
+    ;
+    
+    text-align: center;
+    gap: 10px;
+}
+
+.header {
+    height: 100px;
+    grid-area: header;
+    display: grid;
+    place-items: center;
+    font-size: 22pt;
+}
+
+.settings {
+    grid-area: settings;
+    display: grid;
+    place-items: center;
+}
+
+.current {
+    grid-area: current;
+    height: 50px;
+    font-size: 14pt;
+    font-style: italic;
+}
+
+.refresh {
+    grid-area: refresh;
+}
+
+.readings {
+    grid-area: readings;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.readings-title {
+    margin-bottom: 5px;
+}
+
+.violation {
+    background-color: red;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-areas: 
+    '. header settings'
+    '. profile .'
+    '. action .'
+    ;
+    gap: 10px;
+}
+
+.profile {
+    grid-area: profile;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.action {
+    grid-area: action;
+    width: 50px;
+    justify-self: center;
+}
+
+.first-column {
+    text-align: right;
+    align-self: center;
+}
+
+.second-column {
+    text-align: left;
+}
