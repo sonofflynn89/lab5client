@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
 // Needed URLS
 /////////////////////
 
-const QUERY_URL = 'http://localhost:3000/sky/cloud/ckl9qtx1h000n48vlfkmw2u70';
-const EVENT_URL = 'http://localhost:3000/sky/cloud/event/ckl9qtx1h000n48vlfkmw2u70/client';
+const QUERY_URL = 'http://localhost:8010/proxy/sky/cloud/ckl9qtx1h000n48vlfkmw2u70';
+const EVENT_URL = 'http://localhost:8010/proxy/sky/event/ckl9qtx1h000n48vlfkmw2u70/client';
 
 //////////////////////////
 // Interfaces
@@ -36,7 +36,6 @@ interface Reading {
 export class AppComponent implements OnInit{
   currentReading: Reading;
   readings: Reading[] = [];
-  threshold: number = 65;
   showStart = true;
   profile: Profile;
   editing = false;

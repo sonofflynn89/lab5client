@@ -12,9 +12,9 @@
     <div class="readings-title">Time:</div>
     <div class="readings-title">Date:</div>
     <ng-container *ngFor="let reading of readings"> 
-      <div [class.violation]="reading.temperature > threshold">{{reading.temperature}} ℉</div> 
-      <div [class.violation]="reading.temperature > threshold">{{reading.timestamp | date:'h:mm a'}}</div>
-      <div [class.violation]="reading.temperature > threshold">{{reading.timestamp | date:'M/d'}}</div>
+      <div [class.violation]="reading.temperature > profile?.threshold">{{reading.temperature}} ℉</div> 
+      <div [class.violation]="reading.temperature > profile?.threshold">{{reading.timestamp | date:'h:mm a'}}</div>
+      <div [class.violation]="reading.temperature > profile?.threshold">{{reading.timestamp | date:'M/d'}}</div>
     </ng-container>
   </div>
 </div>
@@ -40,7 +40,7 @@
     <b class="first-column">Temperature Threshold</b>
     <div *ngIf="!editing" class="second-column">{{profile?.threshold}}</div>
     <mat-form-field *ngIf="editing">
-      <input matInput [(ngModel)]="profile.threshold">
+      <input matInput type="number" [(ngModel)]="profile.threshold">
     </mat-form-field>
 
     <b class="first-column">Notification Phone Number</b>
